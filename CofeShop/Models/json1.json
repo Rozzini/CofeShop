@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Cosmostars",
+    "price": 44.0,
+    "curency": "UAH",
+    "quantity": 12,
+    "category": "cerials"
+  },
+  {
+    "id": 2,
+    "name": "Nesquick",
+    "price": 45,
+    "curency": "UAH",
+    "quantity": 8,
+    "category": "cerials"
+  },
+  {
+    "id": 3,
+    "name": "Alah",
+    "price": 14,
+    "curency": "UAH",
+    "quantity": 14,
+    "category": "tea"
+  },
+  {
+    "id": 4,
+    "name": "Ahbar",
+    "price": 15,
+    "curency": "UAH",
+    "quantity": 6,
+    "category": "tea"
+  },
+  {
+    "id": 5,
+    "name": "Ribes",
+    "price": 250,
+    "curency": "UAH",
+    "quantity": 15,
+    "category": "meat"
+  },
+  {
+    "id": 6,
+    "name": "Dogs anuses",
+    "price": 0.50,
+    "curency": "UAH",
+    "quantity": 228,
+    "category": "meat"
+  }
+]
