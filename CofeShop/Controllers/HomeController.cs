@@ -29,40 +29,11 @@ namespace CofeShop.Controllers
   }
 ]
 ";
-
-       
-        //public static void LoadJson()
-        //{
-        //    string path = "C:\\Users\\rozzi\\source\\repos\\CofeShop\\CofeShop\\Models\\Source.json";
-        //    if (!File.Exists(path))
-        //    {
-        //        File.Create(path);
-        //    }
-        //}
-
+             
         public static List<Goods> LoadTemporaryObject()
         {
             List<Goods> items = JsonConvert.DeserializeObject<List<Goods>>(HomeController.sData);
             return items;
-        }
-
-
-        
-        
-        /*public string Buy(int id)
-        {
-            ViewBag.BookId = id;
-            return View();
-        }
-
-        public string Buy(Purchase purchase)
-        {
-            purchase.Date = DateTime.Now;
-            
-            db.Purchases.Add(purchase);
-            // сохраняем в бд все изменения
-            db.SaveChanges();
-            return "Спасибо," + purchase.Person + ", за покупку!";
-        */
+        }                        
     }
 }

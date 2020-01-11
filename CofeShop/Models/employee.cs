@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CofeShop.Models
 {
-    class employee
+    class Employee
     {
         
         public int employeeId { get; set; }
@@ -15,7 +15,7 @@ namespace CofeShop.Models
 
         public string designation { get; set; }
 
-        public employee(int employeeId, string lastName, string firstName, string designation)
+        public Employee(int employeeId, string lastName, string firstName, string designation)
         {
             this.employeeId = employeeId;
             this.lastName = lastName;
