@@ -11,17 +11,17 @@ namespace CofeShop.Controllers
     class EmployeeController
     {
 
-        public static void add()
+        public static void Add()
         {
 
         }
 
-        public static void remove()
+        public static void Remove()
         {
 
         }
 
-        public static void view()
+        public static void View()
         {
 
         }

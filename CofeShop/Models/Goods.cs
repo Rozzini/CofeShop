@@ -8,30 +8,30 @@ namespace CofeShop.Models
 {
     public class Goods
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public double price { get; set; }
+        public double Price { get; set; }
 
-        public string curency { get; set; }
+        public string Currency { get; set; }
 
-        public uint quantity { get; set; }
+        public uint Quantity { get; set; }
 
-        public string category { get; set; }
+        public string Category { get; set; }
 
-        public Goods(int id, string name, double price, string curency, uint quantity, string category)
+        public Goods(int Id, string Name, double Price, string Currency, uint Quantity, string Category)
         {
-            this.id = id;
-            this.name = name;
-            this.price = price;
-            this.curency = curency;
-            this.quantity = quantity;
-            this.category = category;
+            this.Id = Id;
+            this.Name = Name;
+            this.Price = Price;
+            this.Currency = Currency;
+            this.Quantity = Quantity;
+            this.Category = Category;
         }
         public override string ToString()
         {
-            return "id: " + id + " name: " + name + " price: " + price + " curency: " + curency + " quantity: " + quantity + " category: " + category;
+            return "id: " + Id + " name: " + Name + " price: " + Price + " curency: " + Currency + " quantity: " + Quantity + " category: " + Category;
         }
 
        
