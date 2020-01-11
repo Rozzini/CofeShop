@@ -18,10 +18,7 @@ namespace CofeShop
             
             Console.WriteLine(Directory.GetCurrentDirectory());
             SourceController.LoadJsonSource();
-            SourceController.ReadJsonSource();
-           //SourceController.ReadJsonSource();
-           //List <Goods> items = Goods.ReadFromSource(path + "\\Models\\Source.json");
-           //Console.WriteLine(items.Count);
+            SourceController.ReadJsonSource();       
         }
 
         
