@@ -1,26 +1,46 @@
 ﻿using System;
 using System.IO;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json;
 using CofeShop.Models;
 using CofeShop.Controllers;
+using System.Linq;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace CofeShop
 {
-    class Program
+    public class Program
     {
-        static string path = (Directory.GetCurrentDirectory() + "Source.json");
+        //public static string path = (Directory.GetCurrentDirectory() + "Source.json");
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            
-            Console.WriteLine(Directory.GetCurrentDirectory());
-            SourceController.LoadJsonSource();
-            SourceController.ReadJsonSource();       
-        }
+            var builder = new ConfigurationBuilder();
+            // установка пути к текущему каталогу
+            builder.SetBasePath(Directory.GetCurrentDirectory());
+            // получаем конфигурацию из файла appsettings.json
+            builder.AddJsonFile("appsettings.json");
+            // создаем конфигурацию
+            var config = builder.Build();
+            // получаем строку подключения
+            string connectionString = config.GetConnectionString("DefaultConnection");
 
-        
+            var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+            var options = optionsBuilder
+                .UseSqlServer(connectionString)
+                .Options;
+
+            using (ApplicationContext db = new ApplicationContext(options))
+            {
+                var goods = db.Goods.ToList();
+                foreach (Good g in goods)
+                {
+                    Console.WriteLine($"{g.Id}.{g.Name} - {g.Price}");
+                }
+            }
+            Console.Read();
+        }
     }
 }
