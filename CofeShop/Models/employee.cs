@@ -7,20 +7,20 @@ namespace CofeShop.Models
     class Employee
     {
         
-        public int employeeId { get; set; }
+        public int EmployeeId { get; set; }
 
-        public string lastName { get; set; }
+        public string LastName { get; set; }
 
-        public string firstName { get; set; }
+        public string FirstName { get; set; }
 
-        public string designation { get; set; }
+        public string Designation { get; set; }
 
-        public Employee(int employeeId, string lastName, string firstName, string designation)
+        public Employee(int EmployeeId, string LastName, string FirstName, string Designation)
         {
-            this.employeeId = employeeId;
-            this.lastName = lastName;
-            this.firstName = firstName;
-            this.designation = designation;
+            this.EmployeeId = EmployeeId;
+            this.LastName = LastName;
+            this.FirstName = FirstName;
+            this.Designation = Designation;
         }
     }
 }
