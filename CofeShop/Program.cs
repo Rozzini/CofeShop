@@ -18,13 +18,13 @@ namespace CofeShop
         public static void Main(string[] args)
         {
             var builder = new ConfigurationBuilder();
-            // установка пути к текущему каталогу
+            
             builder.SetBasePath(Directory.GetCurrentDirectory());
-            // получаем конфигурацию из файла appsettings.json
+            
             builder.AddJsonFile("appsettings.json");
-            // создаем конфигурацию
+            
             var config = builder.Build();
-            // получаем строку подключения
+            
             string connectionString = config.GetConnectionString("DefaultConnection");
 
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
@@ -37,7 +37,7 @@ namespace CofeShop
                 var goods = db.Goods.ToList();
                 foreach (Good g in goods)
                 {
-                    Console.WriteLine($"{g.Id}.{g.Name} - {g.Price}");
+                    Console.WriteLine($"{g.Id}.{g.Name} - {g.Price} - {g.Currency} - {g.Quantity} - {g.Category}.");
                 }
             }
             Console.Read();
