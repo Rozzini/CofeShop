@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using CofeShop.Models;
 using System.Collections.Generic;
 
@@ -30,10 +28,6 @@ namespace CofeShop.Controllers
 ]
 ";
              
-        public static List<Goods> LoadTemporaryObject()
-        {
-            List<Goods> items = JsonConvert.DeserializeObject<List<Goods>>(HomeController.sData);
-            return items;
-        }                        
+           
     }
 }

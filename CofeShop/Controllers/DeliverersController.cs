@@ -1,8 +1,5 @@
 ﻿using System;
 using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Converters;
 using CofeShop.Models;
 using System.Collections.Generic;
 
