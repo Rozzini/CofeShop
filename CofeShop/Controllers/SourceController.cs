@@ -10,26 +10,7 @@ namespace CofeShop.Controllers
 
         static string path = (Directory.GetCurrentDirectory() +"Source.json");
 
-        static string sData = @"[
-  {
-    'id': 1,
-    'name': 'Cosmostars',
-    'price': 44.0,
-    'curency': 'UAH',
-    'quantity': 12,
-    'category': 'cerials'
-  },
-  {
-    'id': 2,
-    'name': 'Nesquick',
-    'price': 45,
-    'curency': 'UAH',
-    'quantity': 8,
-    'category': 'cerials'
-  }
-]
-";
-
+        
 
         public static void LoadJsonSource()
         {
