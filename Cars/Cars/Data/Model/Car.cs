@@ -8,7 +8,7 @@ namespace Cars.Data.Model
 {
     public class Car
     {
-        public int Id { get; set; }
+        public int CarId { get; set; }
 
         public string Name { get; set; }
 
@@ -18,17 +18,17 @@ namespace Cars.Data.Model
 
         public string Image { get; set; }
 
-        public ushort Price { get; set; }
+       // public ushort Price { get; set; }
 
         public bool IsFavorite { get; set; }
 
         public bool Available { get; set; }
 
 
-        [ForeignKey("Category")]
-        public int CategotyId { get; set; }
+        [ForeignKey("CategoryId")]
+        public int CategoryId { get; set; }
 
-        public virtual Category Category { get; set; }
+        public virtual Category Categories { get; set; }
         
     }
 }
