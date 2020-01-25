@@ -1,4 +1,5 @@
 ﻿using Cars.Data.Interface;
+using Cars.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,15 @@ namespace Cars.Controllers
             _carsCategory = iCarsCategory;
         }
 
-        public ViewResult List()
+        [HttpGet]
+        public IActionResult List()
         {
-            var Cars = _allCars.Cars;
-            return View(Cars);
+            ViewBag.Title = "Auto Veo";
+            CarsListViewModel Obj = new CarsListViewModel();
+            Obj.GetAllCars = _allCars.Cars;
+            Obj.CurrentCategory = "Autos";
+                   
+            return View(Obj);
         }
     }
 }
