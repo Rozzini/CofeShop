@@ -1,19 +1,21 @@
-﻿<h1>Autos</h1>
-<h3>@Model.CurrentCategory</h3>
+﻿@model CategotyListViewModel
+
+<h1>Autos</h1>
+
 <div class-"row mt-5 mb-2">
     <p><a class="btn btn-warning" href="/Home/SomeAction">HOME</a></p>
     @{
-        foreach (var Car in Model.GetAllCars)
+        foreach (var Car in Model.CatCar)
         {
+            if (@Car.CategoryId == 2)
+            {
             <div class="col-lg-4">
                 <img class="img-thumbnail" src="@Car.Image" alt="@Car.Name" />
                 <h2>Model: @Car.Name</h2>
                 <p>@Car.ShortDescription</p>
                 <p><a class="btn btn-warning" href="#">Details</a></p>
             </div>
+                }
+            }
         }
-    }
 </div>
-
-
-

@@ -49,7 +49,7 @@ namespace Cars
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Cars}/{action=List}");
+                    template: "{controller=Home}/{action=SomeAction}");
             });
         }
     }
