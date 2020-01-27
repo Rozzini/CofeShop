@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cars.Data.Model;
 using Cars.Data.Interface;
 using Cars.Data.Repository;
 using Cars.ViewModels;
@@ -34,9 +35,13 @@ namespace Cars.Controllers
         //public ViewResult Edit(int CarId)
         //{
         //    Car car = CarRepository
+        //    Car car = CarRepository
         //        .FirstOrDefault(g => g.CarId == CarId);
         //    return View(car);
         //}
+
+
+
         //public ViewResult Index()
         //{
         //    var AdminCars = new CategotyListViewModel

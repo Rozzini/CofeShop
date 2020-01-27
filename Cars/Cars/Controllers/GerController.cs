@@ -24,7 +24,21 @@ namespace Cars.Controllers
                 CatCar = _allCars.Cars
             };
 
+
+
             return View(GerCar);
+        }
+
+        public ViewResult Bulshit()
+        {
+            var Bulshit = new CategotyListViewModel
+            {
+                CatCar = _allCars.Cars
+            };
+
+
+
+            return View(Bulshit);
         }
     }
 
