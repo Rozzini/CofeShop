@@ -12,24 +12,20 @@ namespace Cars.Controllers
 {
     public class AdminPanelController : Controller
     {
-        private readonly IAllCars _allCars;
-        private readonly ICarsCategory _carsCategory;
+         IAllCars _allCars;
+        
 
-        public AdminPanelController(IAllCars iAllCars, ICarsCategory iCarsCategory)
+        public AdminPanelController(IAllCars iAllCars)
         {
             _allCars = iAllCars;
-            _carsCategory = iCarsCategory;
         }
 
         [HttpGet]
-        public IActionResult List()
+        public ViewResult Index()
         {
-            ViewBag.Title = "Auto Veo";
-            CarsListViewModel Obj = new CarsListViewModel();
-            Obj.GetAllCars = _allCars.Cars;
-            Obj.CurrentCategory = "Autos";
+           
 
-            return View(Obj);
+            return View(_allCars.Cars);
         }
 
         //public ViewResult Edit(int CarId)

@@ -18,7 +18,7 @@ namespace Cars.Data.Model
 
         public string Image { get; set; }
 
-       // public ushort Price { get; set; }
+        public decimal Price { get; set; }
 
         public bool IsFavorite { get; set; }
 

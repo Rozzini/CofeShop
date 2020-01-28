@@ -49,9 +49,9 @@ namespace Cars
             {
                 routes.MapRoute(
                     name: "default",
-                    
-                    template: "{controller=Home}/{action=SomeAction}");
-        });
+                    //template: "{controller=AdminPanel}/{action=Index}");
+                template: "{controller=Home}/{action=SomeAction}");
+            });
         }
     }
 }

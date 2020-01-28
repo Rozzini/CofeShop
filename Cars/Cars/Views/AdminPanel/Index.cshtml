@@ -1,16 +1,64 @@
-﻿@*@model IEnumerable<Car>
+﻿@model IEnumerable<Cars.Data.Model.Car>
 
-
-    @{
-        ViewData["Title"] = "List";
-        Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    }
-
-    <h1>List</h1>
+@{
+    ViewData["Title"] = "Admin panel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+div {
+	color: white;
+}
+td {
+	color: white;
+}
+table {
+	color: white;
+}
+input {
+	color: white;
+}
+</style>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Cars list</h3>
+    </div>
+    < class="panel-body">
+    <table class="table table-striped table-condensed table-bordered">
+        <tr>
+            <th class="text-right">ID</th>
+            <th class="whitetext">Name</th>
+            <th class="text-right">Price</th>
+            <th class="text-center">Actions</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-right">@item.CarId</td>
+                <td>@Html.ActionLink(item.Name, "Edit", new { item.CarId })</td>
+                <td class="text-right">@item.Price.ToString("# руб")</td>
+                <td class="text-center">
+                    @using (Html.BeginForm("Delete", "Admin"))
+                    {
+                        @Html.Hidden("GameId", item.CarId)
+                        <input type="submit"
+                               class="btn btn-default btn-xs"
+                               value="Delete" />
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="panel-footer">
+    @Html.ActionLink("Add car", "Create", null,
+        new { @class = "btn btn-default" })
+</div>
+</div>
+@*<h1>Index</h1>
 
     <p>
         <a asp-action="Create">Create New</a>
-    </p>B
+    </p>
     <table class="table">
         <thead>
             <tr>
@@ -63,7 +111,7 @@
                     @Html.DisplayFor(modelItem => item.IsFavorite)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Available)B
+                    @Html.DisplayFor(modelItem => item.Available)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CategoryId)
@@ -77,52 +125,3 @@
     }
         </tbody>
     </table>*@
-@{
-    ViewData["Title"] = "List";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h1>List</h1>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>B
-<table class="table">
-    <thead>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.GetAllCars)
-        {
-            <tr>
-                <td>
-                    @item.CarId
-                </td>
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                    @item.ShortDescription
-                </td>
-                <td>
-                    @item.LongDescription
-                </td>
-                <td>
-                    @item.Image
-                </td>
-                <td>
-                    @item.IsFavorite
-                </td>
-                <td>
-                    @item.Available
-                </td>
-                <td>
-                    @item.Categories
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
