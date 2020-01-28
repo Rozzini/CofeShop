@@ -12,6 +12,7 @@ namespace Cars.Data.Repository
     {
         private readonly AppDbContext appDbContext;
 
+        //EFDbContext context = new EFDbContext();
         public CarRepository(AppDbContext appDbContext)
         {
             this.appDbContext = appDbContext;
@@ -22,5 +23,30 @@ namespace Cars.Data.Repository
 
         public Car GetObjectCar(int CarId) => appDbContext.Cars.FirstOrDefault(p => p.CarId == CarId);
 
+        public void SaveCar(Car Cars)
+        {
+            if (Cars.CarId == 0)
+                appDbContext.Cars.Add(Cars);
+            
+            else
+            {
+                Car dbEntry = appDbContext.Cars.Find(Cars.CarId);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = Cars.Name;
+                    dbEntry.ShortDescription = Cars.ShortDescription;
+                    dbEntry.LongDescription = Cars.LongDescription;
+                    dbEntry.Image = Cars.Image;
+                    dbEntry.Price = Cars.Price;
+                    dbEntry.IsFavorite = Cars.IsFavorite;
+                    dbEntry.Available = Cars.Available;
+                    dbEntry.CategoryId = Cars.CategoryId;
+                }
+            }
+            appDbContext.SaveChanges();
+        }
     }
+
+
+    
 }

@@ -7,6 +7,7 @@
     <link href="~/CSS/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/CSS/StyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -14,6 +15,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -33,6 +35,13 @@
             </div>
         </nav>
     </header>
+    <div>
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
+        @RenderBody()
+    </div>
     <div class="container mt-2">
         @RenderBody()
     </div>

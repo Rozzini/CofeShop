@@ -49,7 +49,7 @@ namespace Cars
             {
                 routes.MapRoute(
                     name: "default",
-                    //template: "{controller=AdminPanel}/{action=Index}");
+                   // template: "{controller=AdminPanel}/{action=Edit}");
                 template: "{controller=Home}/{action=SomeAction}");
             });
         }

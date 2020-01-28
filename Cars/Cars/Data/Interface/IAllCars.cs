@@ -11,7 +11,10 @@ namespace Cars.Data.Interface
         IEnumerable<Car> Cars { get;}
         
         IEnumerable<Car> GetFavCars { get;}
-
         Car GetObjectCar(int CarId);
+       
+        void SaveCar(Car Cars);
+
+       
     }
 }
