@@ -45,6 +45,17 @@ namespace Cars.Data.Repository
             }
             appDbContext.SaveChanges();
         }
+
+        public Car DeleteCar(int CarId)
+        {
+            Car dbEntry = appDbContext.Cars.Find(CarId);
+            if (dbEntry != null)
+            {
+                appDbContext.Cars.Remove(dbEntry);
+                appDbContext.SaveChanges();
+            }
+            return dbEntry;
+        }
     }
 
 

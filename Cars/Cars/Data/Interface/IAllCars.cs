@@ -15,6 +15,7 @@ namespace Cars.Data.Interface
        
         void SaveCar(Car Cars);
 
-       
+        Car DeleteCar(int CarId);
+
     }
 }

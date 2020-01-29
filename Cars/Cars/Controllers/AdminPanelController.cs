@@ -41,24 +41,32 @@ namespace Cars.Controllers
             if (ModelState.IsValid)
             {
                 _allCars.SaveCar(Cars);
-                TempData["message"] = string.Format("Изменения в игре \"{0}\" были сохранены", Cars.Name);
+                TempData["message"] = string.Format("Changes\"{0}\" were saved", Cars.Name);
                 return RedirectToAction("Index");
             }
             else
             {
-                // Что-то не так со значениями данных
+                
                 return View(Cars);
             }
         }
 
-        //public ViewResult Index()
-        //{
-        //    var AdminCars = new CategotyListViewModel
-        //    {
-        //        CatCar = _allCars.Cars
-        //    };
+        public ViewResult Create()
+        {
+            return View("Edit", new Car());
+        }
 
-        //    return View(AdminCars);
-        //}
+        [HttpPost]
+        public ActionResult Delete(int CarId)
+        {
+            Car deletedCar = _allCars.DeleteCar(CarId);
+            if (deletedCar != null)
+            {
+                TempData["message"] = string.Format("Car \"{0}\" was deleted",
+                    deletedCar.Name);
+            }
+            return RedirectToAction("Index");
+        }
+       
     }
 }

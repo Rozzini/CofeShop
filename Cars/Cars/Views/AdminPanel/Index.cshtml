@@ -35,11 +35,11 @@ input {
             <tr>
                 <td class="text-right">@item.CarId</td>
                 <td>@Html.ActionLink(item.Name, "Edit", new { item.CarId })</td>
-                <td class="text-right">@item.Price.ToString("# руб")</td>
+                <td class="text-right">@item.Price.ToString("# USD")</td>
                 <td class="text-center">
-                    @using (Html.BeginForm("Delete", "Admin"))
+                    @using (Html.BeginForm("Delete", "AdminPanel"))
                     {
-                        @Html.Hidden("GameId", item.CarId)
+                        @Html.Hidden("CarId", item.CarId)
                         <input type="submit"
                                class="btn btn-default btn-xs"
                                value="Delete" />
@@ -49,79 +49,10 @@ input {
         }
     </table>
 </div>
+<div>
+</div>
 <div class="panel-footer">
     @Html.ActionLink("Add car", "Create", null,
         new { @class = "btn btn-default" })
 </div>
-</div>
-@*<h1>Index</h1>
 
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.CarId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ShortDescription)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LongDescription)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Image)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IsFavorite)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Available)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CategoryId)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CarId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ShortDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LongDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Image)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsFavorite)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Available)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryId)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table>*@

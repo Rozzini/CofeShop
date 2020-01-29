@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -15,7 +16,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -36,15 +37,15 @@
         </nav>
     </header>
     <div>
-        @if (TempData["message"] != null)
-        {
-            <div class="alert alert-success">@TempData["message"]</div>
-        }
-        @RenderBody()
+    @if (TempData["message"] != null)
+    {
+        <div  class="alert alert-success">@TempData["message"]</div>
+    }
+    @RenderBody()
     </div>
-    <div class="container mt-2">
-        @RenderBody()
-    </div>
+    @*<div class="container mt-2">
+            @RenderBody()
+        </div>*@
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
         <p>© 2020 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
