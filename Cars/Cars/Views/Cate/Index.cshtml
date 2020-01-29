@@ -1,7 +1,14 @@
 ﻿@model CategotyListViewModel
 
 <h1>Autos</h1>
-
+<style>
+    .cars {
+        background-color: black;
+        color: white;
+        margin: 20px;
+        padding: 20px;
+    }
+</style>
 <div class-"row mt-5 mb-2">
     
     @{
@@ -9,11 +16,11 @@
         {
             if (@Car.CategoryId == 2)
             {
-            <div class="col-lg-4">
-                <img class="img-thumbnail" src="@Car.Image" alt="@Car.Name" />
+            <div class="cars">
+                <img class="img-thumbnail" src="@Car.Image" width="330" height="204" alt="@Car.Name" />
                 <h2>Model: @Car.Name</h2>
                 <p>@Car.ShortDescription</p>
-                <p><a class="btn btn-warning" href="#">Details</a></p>
+                @*<p><a class="btn btn-warning" href="#">Details</a></p>*@
             </div>
                 }
             }

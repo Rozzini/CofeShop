@@ -9,10 +9,10 @@
     <link href="~/CSS/StyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body style="background-color:#ffffff;">
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Carousel</a>
+            <a class="navbar-brand" href="#">AVITO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,7 +26,16 @@
                         <a class="nav-link" href="~/AdminPanel/Index">Admin Panel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <p> <a href="~/Cate/Index"><img src="~/Img/Jap.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
+                    </li>
+                    <li class="nav-item">
+                        <p> <a href="~/Ger/Estus"><img src="~/Img/Ger.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
+                    </li>
+                    <li class="nav-item">
+                        <p> <a href="~/Ger/Bulshit"><img src="~/Img/Rus.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Cars/List">ALL</a>
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
@@ -36,16 +45,18 @@
             </div>
         </nav>
     </header>
+
+
     <div>
-    @if (TempData["message"] != null)
-    {
-        <div  class="alert alert-success">@TempData["message"]</div>
-    }
-    @RenderBody()
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
+        @RenderBody()
     </div>
-    @*<div class="container mt-2">
-            @RenderBody()
-        </div>*@
+    <div class="container mt-2">
+        @*@RenderBody()*@
+    </div>
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
         <p>© 2020 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
