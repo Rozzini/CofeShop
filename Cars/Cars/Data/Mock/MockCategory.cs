@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Cars.Data.Mock
 {
-    public class MockCategory : ICarsCategory
+    public class MockCategory : ICategory
     {
-        public IEnumerable<Category> AllCategories
+        public IEnumerable<Category> GetAllCategories
         {
             get
             {

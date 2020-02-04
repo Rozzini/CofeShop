@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Cars.Data.Interface
 {
-    public interface ICarsCategory
+    public interface ICategory
     {
-        IEnumerable<Category> AllCategories { get; }
+        IEnumerable<Category> GetAllCategories { get; }
     }
 }

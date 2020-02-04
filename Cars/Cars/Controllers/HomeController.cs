@@ -12,7 +12,8 @@ namespace Cars.Controllers
         {
             return View();
         }
-        public ActionResult SomeAction()
+       
+        public ActionResult StartPage()
         {
             return View();
         }

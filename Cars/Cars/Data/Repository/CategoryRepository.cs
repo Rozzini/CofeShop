@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cars.Data.Repository
 {
-    public class CategoryRepository : ICarsCategory
+    public class CategoryRepository : ICategory
     {
         private readonly AppDbContext appDbContext;
 
@@ -15,6 +15,6 @@ namespace Cars.Data.Repository
         {
             this.appDbContext = appDbContext;
         }
-        public IEnumerable<Category> AllCategories => appDbContext.Categories;
+        public IEnumerable<Category> GetAllCategories => appDbContext.Categories;
     }
 }

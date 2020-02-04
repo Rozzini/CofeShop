@@ -12,13 +12,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Cars.Data.Repository;
-//using Cars.Data.
 
 namespace Cars
 {
     public class Startup
     {
-
 
         private IConfigurationRoot _confsting;
 
@@ -33,8 +31,8 @@ namespace Cars
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_confsting.GetConnectionString("DefaultConnection")));
            
-            services.AddTransient<IAllCars, CarRepository>();
-            services.AddTransient<ICarsCategory, CategoryRepository>();
+            services.AddTransient<ICar, CarRepository>();
+            services.AddTransient<ICategory, CategoryRepository>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
@@ -48,10 +46,9 @@ namespace Cars
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                   
-                template: "{controller=Home}/{action=SomeAction}");
-            });
+                    name: "default",                  
+                template: "{controller=Home}/{action=StartPage}");      
+        });
         }
     }
 }

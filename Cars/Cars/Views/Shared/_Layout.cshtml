@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 
+<link href="~/CSS/Style.css" rel="stylesheet" type="text/css" />
 
 <html>
 <head>
@@ -20,19 +21,19 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="~/Home/SomeAction">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="~/Home/StartPage">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="~/AdminPanel/Index">Admin Panel</a>
                     </li>
                     <li class="nav-item">
-                        <p> <a href="~/Cate/Index"><img src="~/Img/Jap.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
+                        <p> <a href="~/Cars/JapanesCars"><img src="~/Img/Jap.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
                     </li>
                     <li class="nav-item">
-                        <p> <a href="~/Ger/Estus"><img src="~/Img/Ger.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
+                        <p> <a href="~/Cars/GermanCars"><img src="~/Img/Ger.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
                     </li>
                     <li class="nav-item">
-                        <p> <a href="~/Ger/Bulshit"><img src="~/Img/Rus.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
+                        <p> <a href="~/Cars/RussianCars"><img src="~/Img/Rus.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="~/Cars/List">ALL</a>
@@ -55,7 +56,7 @@
         @RenderBody()
     </div>
     <div class="container mt-2">
-        @*@RenderBody()*@
+        @RenderBody()
     </div>
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>

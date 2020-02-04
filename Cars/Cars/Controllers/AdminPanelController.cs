@@ -12,25 +12,22 @@ namespace Cars.Controllers
 {
     public class AdminPanelController : Controller
     {
-         IAllCars _allCars;
+         ICar _Car;
         
-
-        public AdminPanelController(IAllCars iAllCars)
+        public AdminPanelController(ICar iCar)
         {
-            _allCars = iAllCars;
+            _Car = iCar;
         }
 
         [HttpGet]
         public ViewResult Index()
-        {
-           
-
-            return View(_allCars.Cars);
+        {           
+            return View(_Car.Cars);
         }
 
         public ViewResult Edit(int CarId)
         {
-            Car car = _allCars.Cars
+            Car car = _Car.Cars
              .FirstOrDefault(C => C.CarId == CarId);
             return View(car);
         }
@@ -40,13 +37,12 @@ namespace Cars.Controllers
         {
             if (ModelState.IsValid)
             {
-                _allCars.SaveCar(Cars);
+                _Car.SaveCar(Cars);
                 TempData["message"] = string.Format("Changes\"{0}\" were saved", Cars.Name);
                 return RedirectToAction("Index");
             }
             else
-            {
-                
+            {                
                 return View(Cars);
             }
         }
@@ -59,11 +55,10 @@ namespace Cars.Controllers
         [HttpPost]
         public ActionResult Delete(int CarId)
         {
-            Car deletedCar = _allCars.DeleteCar(CarId);
+            Car deletedCar = _Car.DeleteCar(CarId);
             if (deletedCar != null)
             {
-                TempData["message"] = string.Format("Car \"{0}\" was deleted",
-                    deletedCar.Name);
+                TempData["message"] = string.Format("Car was deleted");
             }
             return RedirectToAction("Index");
         }

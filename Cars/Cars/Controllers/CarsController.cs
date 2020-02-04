@@ -11,12 +11,12 @@ namespace Cars.Controllers
 {
     public class CarsController : Controller
     {
-        private readonly IAllCars _allCars;
-        private readonly ICarsCategory _carsCategory;
+        private readonly ICar _Car;
+        private readonly ICategory _carsCategory;
 
-        public CarsController(IAllCars iAllCars, ICarsCategory iCarsCategory)
+        public CarsController(ICar iAllCars, ICategory iCarsCategory)
         {
-            _allCars = iAllCars;
+            _Car = iAllCars;
             _carsCategory = iCarsCategory;
         }
 
@@ -25,10 +25,40 @@ namespace Cars.Controllers
         {
             ViewBag.Title = "Auto Veo";
             CarsListViewModel Obj = new CarsListViewModel();
-            Obj.GetAllCars = _allCars.Cars;
+            Obj.GetAllCars = _Car.Cars;
             Obj.CurrentCategory = "Autos";
-                   
+
             return View(Obj);
+        }
+
+        public ViewResult GermanCars()
+        {
+            var GermanCars = new CarsListViewModel
+            {
+                GetAllCars = _Car.Cars
+            };
+
+            return View(GermanCars);
+        }
+
+        public ViewResult JapanesCars()
+        {
+            var JapanesCars = new CarsListViewModel
+            {
+                GetAllCars = _Car.Cars
+            };
+
+            return View(JapanesCars);
+        }
+
+        public ViewResult RussianCars()
+        {
+            var RussinaCategory = new CarsListViewModel
+            {
+                GetAllCars = _Car.Cars
+            };
+
+            return View(RussinaCategory);
         }
     }
 }
