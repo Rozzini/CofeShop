@@ -1,4 +1,7 @@
-﻿using Cars.Data.Interface;
+﻿using Cars.Data;
+using Cars.Data.Interface;
+using Cars.Data.Model;
+using Cars.Data.Repository;
 using Cars.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,53 +15,22 @@ namespace Cars.Controllers
     public class CarsController : Controller
     {
         private readonly ICar _Car;
-        private readonly ICategory _carsCategory;
-
+        private readonly ICategory _CarsCategory;
+       
         public CarsController(ICar iAllCars, ICategory iCarsCategory)
         {
             _Car = iAllCars;
-            _carsCategory = iCarsCategory;
+            _CarsCategory = iCarsCategory;
         }
 
         [HttpGet]
-        public IActionResult List()
+        
+        public IActionResult ShowCarsByCategory(int id)
         {
-            ViewBag.Title = "Auto Veo";
-            CarsListViewModel Obj = new CarsListViewModel();
-            Obj.GetAllCars = _Car.Cars;
-            Obj.CurrentCategory = "Autos";
-
-            return View(Obj);
+            CarsListViewModel Obj = new CarsListViewModel();            
+            Obj.GetCarsByCategory = _Car.GetCarsByCategory(id);
+            return View(Obj);            
         }
-
-        public ViewResult GermanCars()
-        {
-            var GermanCars = new CarsListViewModel
-            {
-                GetAllCars = _Car.Cars
-            };
-
-            return View(GermanCars);
-        }
-
-        public ViewResult JapanesCars()
-        {
-            var JapanesCars = new CarsListViewModel
-            {
-                GetAllCars = _Car.Cars
-            };
-
-            return View(JapanesCars);
-        }
-
-        public ViewResult RussianCars()
-        {
-            var RussinaCategory = new CarsListViewModel
-            {
-                GetAllCars = _Car.Cars
-            };
-
-            return View(RussinaCategory);
-        }
+      
     }
 }

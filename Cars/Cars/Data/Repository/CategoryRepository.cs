@@ -16,5 +16,7 @@ namespace Cars.Data.Repository
             this.appDbContext = appDbContext;
         }
         public IEnumerable<Category> GetAllCategories => appDbContext.Categories;
+
+        
     }
 }

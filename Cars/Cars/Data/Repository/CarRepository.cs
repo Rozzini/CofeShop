@@ -17,11 +17,28 @@ namespace Cars.Data.Repository
         {
             this.appDbContext = appDbContext;
         }
-        public IEnumerable<Car> Cars => appDbContext.Cars.Include(c => c.Categories);
+        public IEnumerable<Car> GetAllCars => appDbContext.Cars.Include(c => c.Categories);
 
         public IEnumerable<Car> GetFavoriteCars => appDbContext.Cars.Where(p => p.IsFavorite).Include(c => c.Categories);
 
         public Car GetObjectCar(int CarId) => appDbContext.Cars.FirstOrDefault(p => p.CarId == CarId);
+
+        public IEnumerable<Car> GetCarsCategory(int Id) => appDbContext.Cars.Where(x => x.CategoryId == Id);
+        public IEnumerable<Car> GetCarsByCategory(int categoryId)
+        {
+            if(categoryId == -1)
+            {
+                return (GetAllCars);
+            }
+            else
+            {
+                return (GetCarsCategory(categoryId));
+            }
+    
+        }
+        
+
+
 
         public void SaveCar(Car Cars)
         {

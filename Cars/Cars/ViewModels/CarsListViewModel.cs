@@ -9,7 +9,10 @@ namespace Cars.ViewModels
     public class CarsListViewModel
     {
         public IEnumerable<Car> GetAllCars { get; set; }
-        
+
+        public IEnumerable<Car> GetCarsByCategory { get; set; }
+        public IEnumerable<Category> GetAllCategories { get; set; }
+
         public string CurrentCategory { get; set; }
     }
 }

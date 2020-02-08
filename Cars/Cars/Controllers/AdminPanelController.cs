@@ -22,12 +22,12 @@ namespace Cars.Controllers
         [HttpGet]
         public ViewResult Index()
         {           
-            return View(_Car.Cars);
+            return View(_Car.GetAllCars);
         }
 
         public ViewResult Edit(int CarId)
         {
-            Car car = _Car.Cars
+            Car car = _Car.GetAllCars
              .FirstOrDefault(C => C.CarId == CarId);
             return View(car);
         }
@@ -56,10 +56,12 @@ namespace Cars.Controllers
         public ActionResult Delete(int CarId)
         {
             Car deletedCar = _Car.DeleteCar(CarId);
-            if (deletedCar != null)
-            {
-                TempData["message"] = string.Format("Car was deleted");
-            }
+            //bool isDeleted = _Car.DeleteCar(CarId)
+            //if (isDeleted) 
+            //if (deletedCar == null)
+            //{
+            //    TempData["message"] = string.Format("Car was deleted");
+            //}
             return RedirectToAction("Index");
         }
        

@@ -46,8 +46,9 @@ namespace Cars
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",                  
-                template: "{controller=Home}/{action=StartPage}");      
+                    name: "default",
+                //template: "{controller=Home}/{action=StartPage}");    
+                template: "{controller=Cars}/{action=ShowCarsByCategory}"); 
         });
         }
     }

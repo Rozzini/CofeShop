@@ -8,9 +8,11 @@ namespace Cars.Data.Interface
 {
     public interface ICar
     {
-        IEnumerable<Car> Cars { get; }
+        IEnumerable<Car> GetAllCars { get; }
 
         IEnumerable<Car> GetFavoriteCars { get; }
+
+        IEnumerable<Car> GetCarsByCategory(int categoryId);
         Car GetObjectCar(int CarId);
 
         void SaveCar(Car Cars);
