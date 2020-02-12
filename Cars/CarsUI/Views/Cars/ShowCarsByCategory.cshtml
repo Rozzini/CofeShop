@@ -1,0 +1,18 @@
+﻿<h1>Autos</h1>
+
+<<h1>Autos</h1>
+
+<div class-"row mt-5 mb-2">
+
+    @{
+        foreach (var Car in Model.GetCarsByCategory)
+        {
+            <div class="cars">
+                <img class="img-thumbnail" src="@Car.Image" width="330" height="204" alt="@Car.Name" />
+                <h2>Model: @Car.Name</h2>
+                <p>@Car.ShortDescription</p>
+
+            </div>
+        }
+    }
+</div>

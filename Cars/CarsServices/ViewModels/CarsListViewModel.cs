@@ -1,10 +1,10 @@
-﻿using Cars.Data.Model;
+﻿using CarsData.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Cars.ViewModels
+namespace CarsServices.ViewModels
 {
     public class CarsListViewModel
     {
@@ -16,4 +16,3 @@ namespace Cars.ViewModels
         public string CurrentCategory { get; set; }
     }
 }
- ccccccc
