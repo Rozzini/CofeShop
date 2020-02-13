@@ -1,4 +1,4 @@
-﻿@*@model IEnumerable<Cars.Data.Model.Car>*@
+﻿@model IEnumerable<CarsData.Models.Car>
 
 @{
     ViewData["Title"] = "Admin panel";
@@ -19,13 +19,14 @@
         @foreach (var item in Model)
         {
             <tr>
+                
                 <td class="text-right">@item.CarId</td>
-                @*<td>@Html.ActionLink(item.Name, "Edit", new { item.CarId })</td>*@
+                <td>@Html.ActionLink(item.Name, "Edit", new { item.CarId })</td>
                 <td class="text-right">@item.Price.ToString("# USD")</td>
                 <td class="text-center">
                     @using (Html.BeginForm("Delete", "AdminPanel"))
                     {
-                        @*@Html.Hidden("CarId", item.CarId)*@
+                        @Html.Hidden("CarId", item.CarId)
                         <input type="submit"
                                class="btn btn-default btn-xs"
                                value="Delete" />
