@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsData", "CarsData\CarsData.csproj", "{9509D7C5-F780-4FE6-9532-1DF9BDB1E25C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarsData", "CarsData\CarsData.csproj", "{9509D7C5-F780-4FE6-9532-1DF9BDB1E25C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsRepository", "CarsRepository\CarsRepository.csproj", "{CA16BA68-6A4F-4860-BA70-53A2469EAC8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarsRepository", "CarsRepository\CarsRepository.csproj", "{CA16BA68-6A4F-4860-BA70-53A2469EAC8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsServices", "CarsServices\CarsServices.csproj", "{4E1AA3F9-1B86-4F76-A3A6-CBD1FA06403B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarsServices", "CarsServices\CarsServices.csproj", "{4E1AA3F9-1B86-4F76-A3A6-CBD1FA06403B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsUI", "CarsUI\CarsUI.csproj", "{ADB92A4C-F237-4BF1-9E4A-F037056C311C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarsUI", "CarsUI\CarsUI.csproj", "{ADB92A4C-F237-4BF1-9E4A-F037056C311C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsAPI", "CarsAPI\CarsAPI.csproj", "{A58D7474-D6F5-4702-A45F-1BB9F8DB26FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{ADB92A4C-F237-4BF1-9E4A-F037056C311C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADB92A4C-F237-4BF1-9E4A-F037056C311C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADB92A4C-F237-4BF1-9E4A-F037056C311C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A58D7474-D6F5-4702-A45F-1BB9F8DB26FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A58D7474-D6F5-4702-A45F-1BB9F8DB26FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A58D7474-D6F5-4702-A45F-1BB9F8DB26FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A58D7474-D6F5-4702-A45F-1BB9F8DB26FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

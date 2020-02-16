@@ -1,7 +1,5 @@
-﻿//using Cars.Data;
-using CarsRepository.Interface;
+﻿using CarsRepository.Interface;
 using CarsData.Models;
-//using Cars.Data.Repository;
 using CarsServices.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,10 +12,10 @@ namespace CarsServices.Controllers
 {
     public class CarsController : Controller
     {
-        private readonly ICar _Car;
-        private readonly ICategory _CarsCategory;
+        private readonly ICarRepository _Car;
+        private readonly ICategoryRepository _CarsCategory;
        
-        public CarsController(ICar iAllCars, ICategory iCarsCategory)
+        public CarsController(ICarRepository iAllCars, ICategoryRepository iCarsCategory)
         {
             _Car = iAllCars;
             _CarsCategory = iCarsCategory;
@@ -31,6 +29,8 @@ namespace CarsServices.Controllers
             Obj.GetCarsByCategory = _Car.GetCarsByCategory(id);
             return View(Obj);            
         }
-      
+
+        
+
     }
 }

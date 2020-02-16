@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CarsRepository.Interface
 {
-    public interface ICar
+    public interface ICarRepository
     {
-        IEnumerable<Car> GetAllCars { get; }
+        IEnumerable<Car> GetAllCars();
 
         IEnumerable<Car> GetFavoriteCars { get; }
 

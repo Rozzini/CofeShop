@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarsRepository.Interface
 {
-    public interface ICategory
+    public interface ICategoryRepository
     {
         IEnumerable<Category> GetAllCategories { get; }
     }

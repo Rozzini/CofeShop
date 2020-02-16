@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarsRepository.Repo
 {
-    public class CarRepository : ICar
+    public class CarRepository : ICarRepository
     {
         private readonly AppDbContext appDbContext;
 
@@ -17,7 +17,10 @@ namespace CarsRepository.Repo
         {
             this.appDbContext = appDbContext;
         }
-        public IEnumerable<Car> GetAllCars => appDbContext.Cars.Include(c => c.Categories);
+        public IEnumerable<Car> GetAllCars()
+        {
+            return appDbContext.Cars/*.Include(c => c.Categories)*/;
+        }
 
         public IEnumerable<Car> GetFavoriteCars => appDbContext.Cars.Where(p => p.IsFavorite).Include(c => c.Categories);
 
@@ -28,7 +31,7 @@ namespace CarsRepository.Repo
         {
             if(categoryId == -1)
             {
-                return (GetAllCars);
+                return (GetAllCars());
             }
             else
             {

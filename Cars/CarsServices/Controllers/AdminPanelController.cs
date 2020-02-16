@@ -12,9 +12,9 @@ namespace CarsServices.Controllers
 {
     public class AdminPanelController : Controller
     {
-         ICar _Car;
+        ICarRepository _Car;
         
-        public AdminPanelController(ICar iCar)
+        public AdminPanelController(ICarRepository iCar)
         {
             _Car = iCar;
         }
@@ -22,12 +22,12 @@ namespace CarsServices.Controllers
         [HttpGet]
         public ViewResult Index()
         {           
-            return View(_Car.GetAllCars);
+            return View(_Car.GetAllCars());
         }
 
         public ViewResult Edit(int CarId)
         {
-            Car car = _Car.GetAllCars
+            Car car = _Car.GetAllCars()
              .FirstOrDefault(C => C.CarId == CarId);
             return View(car);
         }

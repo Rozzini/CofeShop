@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarsRepository.Repo
 {
-    public class CategoryRepository : ICategory
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly AppDbContext appDbContext;
 

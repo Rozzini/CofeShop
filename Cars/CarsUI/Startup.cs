@@ -33,8 +33,8 @@ namespace CarsUI
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_confsting.GetConnectionString("DefaultConnection")));
 
-            services.AddTransient<ICar, CarRepository>();
-            services.AddTransient<ICategory, CategoryRepository>();
+            services.AddTransient<ICarRepository, CarRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
