@@ -14,7 +14,8 @@ namespace Cars
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args).UseDefaultServiceProvider(options =>
+                    options.ValidateScopes = false).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

@@ -30,22 +30,14 @@ namespace CarsServices.Controllers
             return _carRepository.GetAllCars();
         }
 
-        // GET: api/Cars/5
-        //[HttpGet("{id}")]
-        //    public async Task<ActionResult<Car>> GetCar(int id)
-        //    {
-        //        //CarsListViewModel Obj = new CarsListViewModel();
-        //        //Obj.GetCarsByCategory = _Car.GetCarsByCategory(id);
-        //        //return (Obj);
-        //        var car = await _context.Cars.FindAsync(id);
+        //GET: api/Cars/5
+        [HttpGet("{id}")]
+        public IEnumerable<Car> GetCar(int id)
+        {
 
-        //        if (car == null)
-        //        {
-        //            return NotFound();
-        //        }
+            return _carRepository.GetCarsByCategory(id);
+        }
 
-        //        return car;
-        //    }
 
         //    // PUT: api/Cars/5
         //    // To protect from overposting attacks, please enable the specific properties you want to bind to, for

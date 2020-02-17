@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarsServices", "CarsService
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarsUI", "CarsUI\CarsUI.csproj", "{ADB92A4C-F237-4BF1-9E4A-F037056C311C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsAPI", "CarsAPI\CarsAPI.csproj", "{A58D7474-D6F5-4702-A45F-1BB9F8DB26FD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{ADB92A4C-F237-4BF1-9E4A-F037056C311C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADB92A4C-F237-4BF1-9E4A-F037056C311C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADB92A4C-F237-4BF1-9E4A-F037056C311C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A58D7474-D6F5-4702-A45F-1BB9F8DB26FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A58D7474-D6F5-4702-A45F-1BB9F8DB26FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A58D7474-D6F5-4702-A45F-1BB9F8DB26FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A58D7474-D6F5-4702-A45F-1BB9F8DB26FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
