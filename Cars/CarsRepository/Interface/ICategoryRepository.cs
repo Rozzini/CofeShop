@@ -8,6 +8,6 @@ namespace CarsRepository.Interface
 {
     public interface ICategoryRepository
     {
-        IEnumerable<Category> GetAllCategories { get; }
+        IEnumerable<Category> GetAllCategories();
     }
 }

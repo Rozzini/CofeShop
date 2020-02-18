@@ -7,7 +7,7 @@
 <h2>Edit Car «@Model.Name»</h2>
 <h2>Edit Car «@Model.Name»</h2>
 <div class="panel">
-    @using (Html.BeginForm("Edit", "AdminPanel"))
+    @using (Html.BeginForm("Create", "AdminPanel"))
     {
         @Html.EditorForModel()
         <input type="submit" value="Save" />
@@ -15,4 +15,3 @@
     }
 
 </div>
-   

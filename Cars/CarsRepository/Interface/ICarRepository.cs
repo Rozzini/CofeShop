@@ -10,13 +10,15 @@ namespace CarsRepository.Interface
     {
         IEnumerable<Car> GetAllCars();
 
-        IEnumerable<Car> GetFavoriteCars { get; }
+        IEnumerable<Car> GetFavoriteCars();
 
         IEnumerable<Car> GetCarsByCategory(int categoryId);
         Car GetObjectCar(int CarId);
 
+        void CreateCar(Car Cars);
+
         void SaveCar(Car Cars);
 
-        Car DeleteCar(int CarId);
+        void DeleteCar(int CarId);
     }
 }

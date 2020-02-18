@@ -15,7 +15,10 @@ namespace CarsRepository.Repo
         {
             this.appDbContext = appDbContext;
         }
-        public IEnumerable<Category> GetAllCategories => appDbContext.Categories;
+        public IEnumerable<Category> GetAllCategories()
+        {
+            return appDbContext.Categories;
+        }
 
         
     }

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using CarsData.Models;
 using CarsRepository.Interface;
-//using Cars.Data.Repository;
 using CarsServices.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,22 +11,22 @@ namespace CarsServices.Controllers
 {
     public class AdminPanelController : Controller
     {
-        ICarRepository _Car;
+        ICarRepository _сarRepository;
         
-        public AdminPanelController(ICarRepository iCar)
+        public AdminPanelController(ICarRepository iAllCars)
         {
-            _Car = iCar;
+            _сarRepository = iAllCars;
         }
 
         [HttpGet]
         public ViewResult Index()
         {           
-            return View(_Car.GetAllCars());
+            return View(_сarRepository.GetAllCars());
         }
 
         public ViewResult Edit(int CarId)
         {
-            Car car = _Car.GetAllCars()
+            Car car = _сarRepository.GetAllCars()
              .FirstOrDefault(C => C.CarId == CarId);
             return View(car);
         }
@@ -37,32 +36,36 @@ namespace CarsServices.Controllers
         {
             if (ModelState.IsValid)
             {
-                _Car.SaveCar(Cars);
+                _сarRepository.SaveCar(Cars);
                 TempData["message"] = string.Format("Changes\"{0}\" were saved", Cars.Name);
                 return RedirectToAction("Index");
             }
             else
-            {                
+            {
                 return View(Cars);
             }
         }
 
-        public ViewResult Create()
+        public ActionResult Create(Car Cars)
         {
-            return View("Edit", new Car());
+            if (ModelState.IsValid)
+            {
+                _сarRepository.CreateCar(Cars);                
+                return RedirectToAction("Index");
+            }
+            else
+            { 
+                return View(Cars); 
+            }
+            
         }
 
         [HttpPost]
         public ActionResult Delete(int CarId)
         {
-            Car deletedCar = _Car.DeleteCar(CarId);
-            //bool isDeleted = _Car.DeleteCar(CarId)
-            //if (isDeleted) 
-            //if (deletedCar == null)
-            //{
-            //    TempData["message"] = string.Format("Car was deleted");
-            //}
-            return RedirectToAction("Index");
+             _сarRepository.DeleteCar(CarId);            
+             TempData["message"] = string.Format("Car doesnt exist");           
+             return RedirectToAction("Index");
         }
        
     }

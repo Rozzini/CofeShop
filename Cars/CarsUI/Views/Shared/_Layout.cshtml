@@ -2,7 +2,6 @@
 
 <link href="~/CSS/Style.css" rel="stylesheet" type="text/css" />
 
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -27,17 +26,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="~/AdminPanel/Index">Admin Panel</a>
                     </li>
+                  </li>
                     <li class="nav-item">
-                        <p> <a href="~/Cars/ShowCarsByCategory?id=2"><img src="~/Img/Jap.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
-                    </li>
-                    <li class="nav-item">
-                        <p> <a href="~/Cars/ShowCarsByCategory?id=1"><img src="~/Img/Ger.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
-                    </li>
-                    <li class="nav-item">
-                        <p> <a href="~/Cars/ShowCarsByCategory?id=3"><img src="~/Img/Rus.jfif" width="44" height="27" hspace="5" alt="Пример"></a> </p>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="~/Cars/ShowCarsByCategory?id=-1">ALL</a>
+                        <a class="nav-link" href="~/Cars/ShowAllCars">ALL</a>
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
@@ -60,7 +51,7 @@
         @RenderBody()
     </div>
     <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
+        <p class="float-right"> <button onclick="window.location.href = '#';" class="buttonTop" style="vertical-align:middle"><span> Back to top </span></button></p>
         <p>© 2020 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
     </footer>
     <script src="~/js/bootstrap.min.js"></script>

@@ -14,39 +14,39 @@ namespace CarsData.Models
     [DataContract]
     public class Car
     {
-        [DataMember]
+       
         [HiddenInput(DisplayValue = true)] 
         public int CarId { get; set; }
 
         [DataMember]
         [Display(Name = "Name")]
-        [Required(ErrorMessage = "Input retard")]
+        [Required(ErrorMessage = "Input please")]
         public string Name { get; set; }
 
         [DataMember]
         [Display(Name = "Short deeeeeescription")]
-        [Required(ErrorMessage = "Input retard")]
+        [Required(ErrorMessage = "Input please")]
         public string ShortDescription { get; set; }
 
         [DataMember]
         [DataType(DataType.MultilineText)]
         [Display(Name = "Long description")]
-        [Required(ErrorMessage = "Input retard")]
+        [Required(ErrorMessage = "Input please")]
         public string LongDescription { get; set; }
 
         [DataMember]
         [Display(Name = "Image url")]
-        [Required(ErrorMessage = "Input retard")]
+        [Required(ErrorMessage = "Input please")]
         public string Image { get; set; }
 
         [DataMember]
         [Display(Name = "Price")]
-        [Required(ErrorMessage = "Input retard")]
+        [Required(ErrorMessage = "Input please")]
         public decimal Price { get; set; }
 
         [DataMember]
         [Display(Name = "Favorite")]
-        [Required(ErrorMessage = "Input retard")]
+        [Required(ErrorMessage = "Input please")]
         public bool IsFavorite { get; set; }
 
         [DataMember]

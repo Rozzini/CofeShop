@@ -12,25 +12,33 @@ namespace CarsServices.Controllers
 {
     public class CarsController : Controller
     {
-        private readonly ICarRepository _Car;
-        private readonly ICategoryRepository _CarsCategory;
+        private readonly ICarRepository _carRepository;
+        private readonly ICategoryRepository _carsCategoryRepository;
        
         public CarsController(ICarRepository iAllCars, ICategoryRepository iCarsCategory)
         {
-            _Car = iAllCars;
-            _CarsCategory = iCarsCategory;
+            _carRepository = iAllCars;
+            _carsCategoryRepository = iCarsCategory;
         }
 
         [HttpGet]
         
         public IActionResult ShowCarsByCategory(int id)
         {
-            CarsListViewModel Obj = new CarsListViewModel();            
-            Obj.GetCarsByCategory = _Car.GetCarsByCategory(id);
-            return View(Obj);            
+            CarsListViewModel actionGetCarsbyCategory = new CarsListViewModel();
+            actionGetCarsbyCategory.GetCarsByCategory = _carRepository.GetCarsByCategory(id);
+            return View(actionGetCarsbyCategory);            
         }
 
-        
+        [HttpGet]
+
+        public IActionResult ShowAllCars()
+        {
+            CarsListViewModel Obj = new CarsListViewModel();
+            Obj.GetCarsByCategory = _carRepository.GetAllCars();
+            return View(Obj);
+        }
+
 
     }
 }
