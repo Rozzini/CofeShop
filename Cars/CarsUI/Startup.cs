@@ -45,13 +45,12 @@ namespace CarsUI
             
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
-            app.UseStaticFiles();
-            //app.UseMvcWithDefaultRoute();
+            app.UseStaticFiles();           
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                //template: "{controller=Home}/{action=StartPage}");    
+                  
                 template: "{controller=Cars}/{action=ShowCarsByCategory}"); 
         });
         }
