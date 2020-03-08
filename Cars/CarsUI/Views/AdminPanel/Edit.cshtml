@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Edit Car «@Model.Name»</h2>
+<h2>Edit Car «@Model.Name»</h2>
+<div class="panel">
+    @using (Html.BeginForm("Edit", "AdminPanel"))
+    {
+        @Html.EditorForModel()
+        <input type="submit" value="Save" />
+        @Html.ActionLink("Cancel changes and go back", "Index")
+    }
+
+</div>
+   
