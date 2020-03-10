@@ -13,6 +13,7 @@ namespace CarsRepository.Interface
         IEnumerable<Car> GetFavoriteCars();
 
         IEnumerable<Car> GetCarsByCategory(int categoryId);
+
         Car GetObjectCar(int CarId);
 
         void CreateCar(Car Cars);
