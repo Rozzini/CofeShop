@@ -1,43 +1,43 @@
-﻿@{
-    ViewData["Title"] = "Admin panel";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@model IEnumerable<CarsData.Models.Category>
+
+@{
+    ViewData["Title"] = "Index2";
 }
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3>Cars list</h3>
+        <h3>Category list</h3>
     </div>
     <table class="table table-striped table-condensed table-bordered">
         <tr>
             <th class="text-right">ID</th>
-            <th class="whitetext">Name</th>
-            <th class="text-right">Price</th>
+            <th class="whitetext">Name</th>            
             <th class="text-center">Actions</th>
         </tr>
         @foreach (var item in Model)
         {
             <tr>
 
-                <td class="text-right">@item.CarId</td>
-                <td>@Html.ActionLink((string)item.Name, "Edit", new { item.CarId })</td>
-                <td class="text-right">@item.Price.ToString("# USD")</td>
+                <td class="text-right">@item.CategoryId</td>
+                <td>@Html.ActionLink(item.CategoryName, "Edit", new { item.CategoryId })</td>               
                 <td class="text-center">
-                    @using (Html.BeginForm("DeleteCar", "AdminPanel"))
+                    @using (Html.BeginForm("DeleteCategory", "AdminPanel"))
                     {
-                        @Html.Hidden("CarId", (int)item.CarId)
+                        @Html.Hidden("CategoryId", (int)item.CategoryId)
                         <input type="submit"
                                class="btn btn-default btn-xs"
                                value="Delete" />
                     }
                 </td>
             </tr>
-        }     
+        }
     </table>
 </div>
 <div>
 </div>
 <div class="panel-footer">
-    @Html.ActionLink("Add car", "CreateCar", null,
-        new { @class = "btn btn-default" })  
+    
+    @Html.ActionLink("Add category", "CreateCategory", null,
+       new { @class = "btn btn-default" })
 </div>
 

@@ -18,26 +18,25 @@
         {
             <tr>
 
-                <td class="text-right">@item.CarId</td>
-                <td>@Html.ActionLink((string)item.Name, "Edit", new { item.CarId })</td>
-                <td class="text-right">@item.Price.ToString("# USD")</td>
+                <td class="text-right">@item.CategoryId</td>
+                <td>@Html.ActionLink((string)item.CategoryName, "Edit", new { item.CategoryId })</td>               
                 <td class="text-center">
-                    @using (Html.BeginForm("DeleteCar", "AdminPanel"))
+                    @using (Html.BeginForm("DeleteCategory", "AdminPanel"))
                     {
-                        @Html.Hidden("CarId", (int)item.CarId)
+                        @Html.Hidden("CategoryId", (int)item.CategoryId)
                         <input type="submit"
                                class="btn btn-default btn-xs"
                                value="Delete" />
                     }
                 </td>
             </tr>
-        }     
+        }
     </table>
 </div>
 <div>
 </div>
-<div class="panel-footer">
-    @Html.ActionLink("Add car", "CreateCar", null,
-        new { @class = "btn btn-default" })  
+<div class="panel-footer">   
+    @Html.ActionLink("Add category", "CreateCategory", null,
+       new { @class = "btn btn-default" })
 </div>
 

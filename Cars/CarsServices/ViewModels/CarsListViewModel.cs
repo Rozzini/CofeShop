@@ -8,6 +8,7 @@ namespace CarsServices.ViewModels
 {
     public class CarsListViewModel
     {
+        
         public IEnumerable<Car> GetAllCars { get; set; }
 
         public IEnumerable<Car> GetCarsByCategory { get; set; }

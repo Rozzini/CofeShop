@@ -9,5 +9,11 @@ namespace CarsRepository.Interface
     public interface ICategoryRepository
     {
         IEnumerable<Category> GetAllCategories();
+
+        void CreateCategory(Category category);
+
+        void SaveCategory(Category category);
+
+        void DeleteCategory(int CategoryId);
     }
 }

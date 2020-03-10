@@ -1,0 +1,17 @@
+﻿@model CarsData.Models.Category
+
+@{
+    ViewData["Title"] = "CreateCategory";
+}
+
+<h1>CreateCategory</h1>
+
+<div class="panel">
+    @using (Html.BeginForm("CreateCategory", "AdminPanel"))
+    {
+        @Html.EditorForModel()
+        <input type="submit" value="Save" />
+        @Html.ActionLink("Cancel changes and go back", "Index2")
+    }
+
+</div>

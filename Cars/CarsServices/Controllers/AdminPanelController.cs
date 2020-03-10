@@ -11,17 +11,24 @@ namespace CarsServices.Controllers
 {
     public class AdminPanelController : Controller
     {
+
         ICarRepository _сarRepository;
-        
-        public AdminPanelController(ICarRepository iAllCars)
+        ICategoryRepository _carsCategoryRepository;
+
+        public AdminPanelController(ICarRepository iAllCars, ICategoryRepository iCarsCategory)
         {
             _сarRepository = iAllCars;
+            _carsCategoryRepository = iCarsCategory;
         }
-
         [HttpGet]
         public ViewResult Index()
-        {           
+        {
             return View(_сarRepository.GetAllCars());
+        }
+
+        public ViewResult Index2()
+        {
+            return View(_carsCategoryRepository.GetAllCategories());
         }
 
         public ViewResult Edit(int CarId)
@@ -46,27 +53,49 @@ namespace CarsServices.Controllers
             }
         }
 
-        public ActionResult Create(Car Cars)
+        public ActionResult CreateCar(Car Cars)
         {
             if (ModelState.IsValid)
             {
-                _сarRepository.CreateCar(Cars);                
+                _сarRepository.CreateCar(Cars);
                 return RedirectToAction("Index");
             }
             else
-            { 
-                return View(Cars); 
+            {
+                return View(Cars);
             }
-            
+
+        }
+
+        public ActionResult CreateCategory(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                _carsCategoryRepository.CreateCategory(category);
+                return RedirectToAction("Index2");
+                
+            }
+            else
+            {
+                return View(category);
+            }
+
         }
 
         [HttpPost]
-        public ActionResult Delete(int CarId)
+        public ActionResult DeleteCar(int CarId)
         {
-             _сarRepository.DeleteCar(CarId);            
-             TempData["message"] = string.Format("Car doesnt exist");           
-             return RedirectToAction("Index");
+            _сarRepository.DeleteCar(CarId);
+            TempData["message"] = string.Format("Car doesnt exist");
+            return RedirectToAction("Index");
         }
-       
+
+        public ActionResult DeleteCategory(int CategoryId)
+        {
+            _carsCategoryRepository.DeleteCategory(CategoryId);
+            TempData["message"] = string.Format("Car doesnt exist");
+            return RedirectToAction("Index");
+        }
+
     }
 }

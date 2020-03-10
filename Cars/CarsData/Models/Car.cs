@@ -15,7 +15,7 @@ namespace CarsData.Models
     public class Car
     {
        
-        [HiddenInput(DisplayValue = true)] 
+        [HiddenInput(DisplayValue = false)] 
         public int CarId { get; set; }
 
         [DataMember]
